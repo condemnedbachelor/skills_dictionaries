@@ -34,7 +34,12 @@ def without_duplicates(words):
 
     """
 
-    return []
+    # Create a set to remove duplicates, then return the set. This returns the desired result for both varied-capitalization and integers.
+
+
+    my_set = set(words) 
+
+    return my_set
 
 
 def find_unique_common_items(list1, list2):
@@ -62,8 +67,10 @@ def find_unique_common_items(list1, list2):
         [2]
 
     """
+    # This returns the right answer but still gives an error in console.
+    list = set(list1).intersection(list2)
 
-    return []
+    return list
 
 
 def count_unique(input_string):
