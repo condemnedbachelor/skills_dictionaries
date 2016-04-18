@@ -67,10 +67,10 @@ def find_unique_common_items(list1, list2):
         [2]
 
     """
-    # This returns the right answer but still gives an error in console.
-    list = set(list1).intersection(list2)
+    # This returns the right answer but still gives an error in console. Will come back to this.
+    my_list = set(list1).intersection(list2)
 
-    return list
+    return my_list
 
 
 def count_unique(input_string):
@@ -99,8 +99,16 @@ def count_unique(input_string):
         {'Porcupine': 1, 'do.': 1, 'porcupine': 1, 'see,': 1}
 
     """
+    unique_dict = {}
 
-    return {}
+    words = input_string.split()
+
+    for i in words:
+        if i not in unique_dict:
+            unique_dict[i] = 1
+        else:
+            unique_dict[i] = unique_dict[i] + 1
+    return unique_dict
 
 
 def translate_to_pirate_talk(phrase):
@@ -141,8 +149,29 @@ def translate_to_pirate_talk(phrase):
 
     """
 
-    return ""
+    # There is no key for "man" in the above translation table, 
+    # and the docstring test is looking for the word man to become matey.
+    # I've added it to the dictionary.
 
+    pirate_dict = {
+    "sir":"matey", "man":"matey", "hotel":"fleabag inn", "student":"swabbie",
+    "boy":"matey", "professor":"foul blaggart","restaurant":"galley",
+    "your":"yer","excuse":"arr","students":"swabbies","are":"be",
+    "restroom":"head","my":"me","is":"be"
+    }
+
+    output = []
+
+    for i in phrase.split():
+        if i not in pirate_dict:
+            output += pirate_dict[i]
+        else:
+            output += i
+
+    return " ".join(output)
+
+
+    
 
 def sort_by_word_length(words):
     """Given list of words, return list of ascending [(len, [words])].
