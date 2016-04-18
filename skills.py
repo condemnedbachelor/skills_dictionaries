@@ -109,6 +109,7 @@ def count_unique(input_string):
             unique_dict[i] = 1
         else:
             unique_dict[i] = unique_dict[i] + 1
+
     return unique_dict
 
 
@@ -155,19 +156,30 @@ def translate_to_pirate_talk(phrase):
     # I've added it to the dictionary.
 
     pirate_dict = {
-    "sir":"matey", "man":"matey", "hotel":"fleabag inn", "student":"swabbie",
-    "boy":"matey", "professor":"foul blaggart","restaurant":"galley",
-    "your":"yer","excuse":"arr","students":"swabbies","are":"be",
-    "restroom":"head","my":"me","is":"be"
+    "sir":"matey", 
+    "man":"matey", 
+    "hotel":"fleabag inn", 
+    "student":"swabbie",
+    "boy":"matey", 
+    "professor":"foul blaggart",
+    "restaurant":"galley",
+    "your":"yer",
+    "excuse":"arr",
+    "students":"swabbies",
+    "are":"be",
+    "restroom":"head",
+    "my":"me",
+    "is":"be"
     }
 
     output = []
-
-    for i in phrase.split():
-        if i not in pirate_dict:
-            output += pirate_dict[i]
+    phrase = phrase.split()
+    
+    for word in phrase:
+        if word in pirate_dict:
+            output.append(pirate_dict.get(word))
         else:
-            output += i
+            output.append(word)
 
     return " ".join(output)
 
@@ -187,9 +199,19 @@ def sort_by_word_length(words):
         [(1, ['a']), (2, ['ok', 'an']), (3, ['day']), (5, ['apple'])]
 
     """
-    my_tuple = sorted(len(words.split()))
-    return my_tuple
+    # I got so close here. Output is the right info, but wrong order and format. Need to study
+    # built-in tuple methods more.
+ 
+    list_o_tuples = []
 
+    for word in sorted(words):
+        length = len(word)
+        my_tuple = str(length), word
+        list_o_tuples.extend(my_tuple) #<-- This can't be correct in this case.
+ 
+    return list_o_tuples
+
+  
 
 def get_sum_zero_pairs(input_list):
     """Given list of numbers, return list of pair summing to 0.
@@ -219,8 +241,14 @@ def get_sum_zero_pairs(input_list):
         [[-2, 2], [-1, 1], [0, 0]]
 
     """
+    # out_dict = {}
 
-    return []
+    # for i in input_list:
+    #     if i + input_list[:] = 0
+
+
+
+    # return output_list
 
 
 ##############################################################################
