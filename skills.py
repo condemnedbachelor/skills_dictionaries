@@ -34,6 +34,7 @@ def without_duplicates(words):
 
     """
     #COMPLETE
+
     # Create a set to remove duplicates, then return the set. This returns the desired result for both varied-capitalization and integers.
 
 
@@ -68,6 +69,7 @@ def find_unique_common_items(list1, list2):
 
     """
     #COMPLETE
+
     my_list = set(list1).intersection(list2)
 
     return my_list
@@ -100,6 +102,7 @@ def count_unique(input_string):
 
     """
     # COMPLETE
+
     unique_dict = {}
 
     words = input_string.split()
@@ -172,10 +175,11 @@ def translate_to_pirate_talk(phrase):
     "is":"be"
     }
 
+    # COMPLETE
+
     output = []
-    phrase = phrase.split()
-    
-    for word in phrase:
+
+    for word in phrase.split():
         if word in pirate_dict:
             output.append(pirate_dict.get(word))
         else:
@@ -199,8 +203,9 @@ def sort_by_word_length(words):
         [(1, ['a']), (2, ['ok', 'an']), (3, ['day']), (5, ['apple'])]
 
     """
-    # I got so close here. Output is the right info, but wrong order and format. Need to study
-    # built-in tuple methods more.
+    # COMMENTS:
+    # I feel like I got close here. Output is the right info, but wrong order and format. I will study
+    # more built-in tuple methods until I learn how to append them as unique entitites to a list.
  
     list_o_tuples = []
 
@@ -241,15 +246,20 @@ def get_sum_zero_pairs(input_list):
         [[-2, 2], [-1, 1], [0, 0]]
 
     """
-    # out_dict = {}
 
-    # for i in input_list:
-    #     if i + input_list[:] = 0
+    #I hope this attempt will show my thinking.
+    #This also requires adding tuples to a list thereof,
+    #which is the problem I was having in sort_by_word_length.
 
+    #Happy to meet with you and try to learn more.
 
+    output = []
+    for x, y in input_list:
+        if x + y == 0:
+            pair = (x,y)
+            output.append( (pair) )
 
-    # return output_list
-
+    return output
 
 ##############################################################################
 # You can ignore everything below this.
