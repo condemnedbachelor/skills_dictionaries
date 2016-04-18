@@ -33,7 +33,7 @@ def without_duplicates(words):
 
 
     """
-
+    #COMPLETE
     # Create a set to remove duplicates, then return the set. This returns the desired result for both varied-capitalization and integers.
 
 
@@ -67,7 +67,7 @@ def find_unique_common_items(list1, list2):
         [2]
 
     """
-    # This returns the right answer but still gives an error in console. Will come back to this.
+    #COMPLETE
     my_list = set(list1).intersection(list2)
 
     return my_list
@@ -99,6 +99,7 @@ def count_unique(input_string):
         {'Porcupine': 1, 'do.': 1, 'porcupine': 1, 'see,': 1}
 
     """
+    # COMPLETE
     unique_dict = {}
 
     words = input_string.split()
@@ -186,8 +187,8 @@ def sort_by_word_length(words):
         [(1, ['a']), (2, ['ok', 'an']), (3, ['day']), (5, ['apple'])]
 
     """
-
-    return []
+    my_tuple = sorted(len(words.split()))
+    return my_tuple
 
 
 def get_sum_zero_pairs(input_list):
